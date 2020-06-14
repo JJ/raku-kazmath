@@ -10,6 +10,10 @@ our class mat4 is repr('CStruct') is export {
             @!mat[$_] = @mat[$_];
         }
     }
+
+    method gist() {
+        "[", (@!mat[$_] for ^16).join(", "), "]";
+    }
 }
 
 sub kmSQR( num32 $s ) returns num32 is native('kazmath') is export {*}
