@@ -1,12 +1,12 @@
 {
   "auth" : "github:JJ",
-  "authors" : [],
+  "authors" : ["JJ Merelo"],
   "depends" : [
     "JSON::Fast"
   ],
-  "description" : "",
+  "description" : "Raku bindings for the kazmath library",
   "license" : "Artistic-2.0",
-  "name" : "",
+  "name" : "kazmath",
   "perl" : "6.d",
   "provides" : {
     "kazmath": "lib/kazmath.pm6"
@@ -14,7 +14,7 @@
   "resources" : [ ],
   "source-url" : "https://github.com/JJ/raku-kazmath.git",
   "tags" : [
-    "modules"
+    "modules","math", "graphics"
   ],
     "version" : "0.0.1",
     "meta-version": 1
