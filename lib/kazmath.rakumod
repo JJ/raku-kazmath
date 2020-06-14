@@ -2,7 +2,20 @@ use NativeCall;
 
 unit module kazmath;
 
-our class mat4 is repr('CStruct') is export {
+class vec4 is repr('CStruct') is export {
+    has num32 $.x;
+    has num32 $.y;
+    has num32 $.z;
+    has num32 $.w;
+
+    method new( $x, $y, $z, $w ) {
+        self.bless( :$x, :$y, :$z, :$w )
+    }
+
+    submethod BUILD ( :$!x, :$!y, :$!z, :$!w) { }
+}
+
+class mat4 is repr('CStruct') is export {
     HAS num32 @.mat[16] is CArray;
 
     submethod BUILD( :@mat = 0.Num xx 16) {
