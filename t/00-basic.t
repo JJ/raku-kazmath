@@ -12,10 +12,8 @@ my mat4 $one-mat .= new( );
 ok($one-mat, "Declaration OK");
 is($one-mat.mat.list[0],0, "Initialized OK");
 
-say nativesizeof( $one-mat);
 my $returned-mat = kmMat4Fill( $one-mat, $riller);
 is $returned-mat.mat[0], 2.Num, "First one filled correctly";
 is $returned-mat.mat[15], 2.Num, "Last one filled correctly";
-say nativesizeof( $returned-mat);
-# is $returned-mat.gist, "[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]",
-# "Whole class";
+is $returned-mat.gist, "[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]",
+ "Whole class";

@@ -12,7 +12,11 @@ our class mat4 is repr('CStruct') is export {
     }
 
     method gist() {
-        "[", (@!mat[$_] for ^16).join(", "), "]";
+        my @arr;
+        for ^16 {
+            @arr.append: @!mat[$_];
+        }
+        return "[{@arr.join(", ")}]";
     }
 }
 
