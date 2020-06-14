@@ -9,7 +9,7 @@
   "name" : "kazmath",
   "perl" : "6.d",
   "provides" : {
-    "kazmath": "lib/kazmath.pm6"
+    "kazmath": "lib/kazmath.rakumod"
   },
   "resources" : [ ],
   "source-url" : "https://github.com/JJ/raku-kazmath.git",
