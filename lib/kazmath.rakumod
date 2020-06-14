@@ -5,9 +5,9 @@ unit module kazmath;
 our class mat4 is repr('CStruct') is export {
     HAS num32 @.mat[16] is CArray;
 
-    submethod BUILD(){
+    submethod BUILD( :@mat = 0.Num xx 16) {
         for ^16 {
-            @!mat[$_] = 0.Num;
+            @!mat[$_] = @mat[$_];
         }
     }
 }
