@@ -2,7 +2,7 @@
 
 apk update
 apk upgrade
-apk add cmake make
+apk add cmake make gcc
 cd tmp
 git clone --depth 1 https://github.com/Kazade/kazmath.git
 cd kazmath
