@@ -1,5 +1,5 @@
 {
-  "auth" : "",
+  "auth" : "github:JJ",
   "authors" : [],
   "depends" : [
     "JSON::Fast"
@@ -8,9 +8,11 @@
   "license" : "Artistic-2.0",
   "name" : "",
   "perl" : "6.d",
-  "provides" : { },
+  "provides" : {
+    "kazmath": "lib/kazmath.pm6"
+  },
   "resources" : [ ],
-  "source-url" : "",
+  "source-url" : "https://github.com/JJ/raku-kazmath.git",
   "tags" : [
     "modules"
   ],
