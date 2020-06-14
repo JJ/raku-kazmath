@@ -1,9 +1,7 @@
 {
   "auth" : "github:JJ",
   "authors" : ["JJ Merelo"],
-  "depends" : [
-    "JSON::Fast"
-  ],
+  "depends" : [],
   "description" : "Raku bindings for the kazmath library",
   "license" : "Artistic-2.0",
   "name" : "kazmath",
