@@ -9,4 +9,4 @@ done-testing;
 my num32 @filler[16] = 2.Num xx 16;
 my mat4 $one-mat .= new;
 ok($one-mat, "Declaration OK");
-$one-mat
+is($one-mat.mat.list[0],0, "Initialized OK");

@@ -4,6 +4,12 @@ unit module kazmath;
 
 our class mat4 is repr('CStruct') is export {
     HAS num32 @.mat[16] is CArray;
+
+    submethod BUILD(){
+        for ^16 {
+            @!mat[$_] = 0.Num;
+        }
+    }
 }
 
 sub kmSQR( num32 $s ) returns num32 is native('kazmath') is export {*}
