@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd tmp
-git clone --shallow https://github.com/Kazade/kazmath.git
+git clone --depth 1 https://github.com/Kazade/kazmath.git
 cd kazmath
 mkdir build
 cd build
