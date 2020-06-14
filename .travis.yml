@@ -6,5 +6,4 @@ services:
 install:
   - docker pull jjmerelo/raku-test
 
-script:
-  - docker run -t -v  $TRAVIS_BUILD_DIR:/test jjmerelo/raku-test
+script: docker run -t  --entrypoint="/bin/sh" -v  $TRAVIS_BUILD_DIR:/test jjmerelo/raku-test -c "./download-and-compile-kazmath.sh && zef install --deps-only . && zef test ."
