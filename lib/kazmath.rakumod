@@ -26,10 +26,12 @@ class mat4 is repr('CStruct') is export {
 
     method gist() {
         my @arr;
+        my $index = 0;
         for ^16 {
-            @arr.append: @!mat[$_];
+            my $index = ($_ % 4 ) * 4 + ($_ div 4 );
+            @arr.append: @!mat[$index];
         }
-        return "[{@arr.join(", ")}]";
+        return (@arr.rotor(4).map: "|" ~ *.join(" ") ~ "|").join("\n")
     }
 }
 
