@@ -43,28 +43,28 @@ EOT
 
 subtest "Rotation X", {
     my mat4 $one-mat .= new;
-    my $turn-pi = kmMat4RotationX($one-mat, pi/2);
-    my mat4 $two-mat .= new;
-    my $return-pi = kmMat4RotationX($two-mat, -pi/2);
-    is $turn-pi.mat[6], -$return-pi.mat[6], "Rotates X OK";
+    my mat4 $result1 = kmMat4RotationX($one-mat, pi/2);
     my vec4 $out .= new;
-    my vec4 $in  .= new(1.Num, 0.Num, 0.Num, 1.Num);
-    my vec4 $result = kmVec4Transform( $out, $in, $turn-pi);
+    my vec4 $in  .= new(0.Num, 1.Num, 0.Num, 1.Num);
+    my vec4 $result = kmVec4Transform( $out, $in, $result1);
+    is( $result.z,1e0, "Turning stuff X")
 };
 
 subtest "Rotation Y", {
     my mat4 $one-mat .= new;
-    my $turn-pi = kmMat4RotationY($one-mat, pi/2);
-    my mat4 $two-mat .= new;
-    my $return-pi = kmMat4RotationY($two-mat, -pi/2);
-    is $turn-pi.mat[2], -$return-pi.mat[2], "Rotates Y OK";
+    my mat4 $turn-pi = kmMat4RotationY($one-mat, pi/2);
+    my vec4 $out .= new;
+    my vec4 $in  .= new(1.Num, 0.Num, 0.Num, 1.Num);
+    my vec4 $result = kmVec4Transform( $out, $in, $turn-pi);
+    is( $result.z,-1e0, "Turning stuff Y")
 };
 
 subtest "Rotation Z", {
     my mat4 $one-mat .= new;
-    my $turn-pi = kmMat4RotationZ($one-mat, pi);
-    my mat4 $two-mat .= new;
-    my $return-pi = kmMat4RotationZ($two-mat, -pi);
-    is $turn-pi.mat[1], -$return-pi.mat[1], "Rotates Z OK";
+    my mat4 $turn-pi = kmMat4RotationZ($one-mat, pi/2);
+    my vec4 $out .= new;
+    my vec4 $in  .= new(0.Num, 1.Num, 0.Num, 1.Num);
+    my vec4 $result = kmVec4Transform( $out, $in, $turn-pi);
+    is( $result.x,-1e0, "Turning stuff Y")
 };
 
