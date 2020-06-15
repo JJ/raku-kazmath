@@ -16,6 +16,7 @@ subtest "Vec4", {
     is($v.w, 1.Num, "Last OK");
     my vec4 $in .= new(1.Num, 0.Num, 0.Num, 1.Num);
     my vec4 $result = kmVec4Scale($out, $in, 2.Num);
+    say $result;
     is($result.x, 1.4142135381698608, "Scaling OK");
 }
 
