@@ -31,3 +31,6 @@ $expected .= chomp;
 is $returned-mat.gist, $expected,
  "Whole class";
 
+my $turn-pi = kmMat4RotationX( $one-mat, pi );
+my $return-pi = kmMat4RotationX( $one-mat, -pi );
+is $turn-pi.mat[6], $return-pi.mat[6], "Inverts OK";

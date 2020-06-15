@@ -43,3 +43,6 @@ export {*}
 
 sub kmMat4Fill( mat4 $mat, CArray[num32] $filler )
         returns mat4 is native('kazmath') is export {*}
+
+sub kmMat4RotationX(mat4 $mat, num32 $radians)
+    returns mat4 is native('kazmath') is export {*}
