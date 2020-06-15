@@ -19,24 +19,27 @@ subtest "Vec4", {
     is($result.x, 1.4142135381698608, "Scaling OK");
 }
 
-my mat4 $one-mat .= new;
-ok($one-mat, "Declaration OK");
-is($one-mat.mat.list[0],0, "Initialized OK");
+subtest "Mat4", {
+    my mat4 $one-mat .= new;
+    ok($one-mat, "Declaration OK");
+    is($one-mat.mat.list[0],0, "Initialized OK");
+    my mat4 $result = kmMat4Identity( $one-mat );
+    is $result.mat[0], 1.Num, "Identity OK";
 
-my CArray[num32] $riller .= new( | (0..15).map: *.Num );
+    my CArray[num32] $riller .= new( | (0..15).map: *.Num );
 
-my $returned-mat = kmMat4Fill( $one-mat, $riller);
-is $returned-mat.mat[0], 0.Num, "First one filled correctly";
-is $returned-mat.mat[15], 15.Num, "Last one filled correctly";
-my $expected =  q:to/EOT/;
+    my $returned-mat = kmMat4Fill( $one-mat, $riller);
+    is $returned-mat.mat[0], 0.Num, "First one filled correctly";
+    is $returned-mat.mat[15], 15.Num, "Last one filled correctly";
+    my $expected =  q:to/EOT/;
 |0 4 8 12|
 |1 5 9 13|
 |2 6 10 14|
 |3 7 11 15|
 EOT
-$expected .= chomp;
-is $returned-mat.gist, $expected,
- "Whole class";
+    $expected .= chomp;
+    is $returned-mat.gist, $expected, "Whole class";
+}
 
 subtest "Rotation X", {
     my mat4 $one-mat .= new;
@@ -44,7 +47,7 @@ subtest "Rotation X", {
     my mat4 $two-mat .= new;
     my $return-pi = kmMat4RotationX($two-mat, -pi/2);
     is $turn-pi.mat[6], -$return-pi.mat[6], "Rotates X OK";
-    my vec4 $out .= new(0.Num, 0.Num, 0.Num, 1.Num);
+    my vec4 $out .= new;
     my vec4 $in  .= new(1.Num, 0.Num, 0.Num, 1.Num);
     my vec4 $result = kmVec4Transform( $out, $in, $turn-pi);
 };

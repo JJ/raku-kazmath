@@ -60,6 +60,10 @@ sub kmMat4RotationY(mat4 $mat, num32 $radians)
 sub kmMat4RotationZ(mat4 $mat, num32 $radians)
         returns mat4 is native('kazmath') is export {*}
 
+sub kmMat4Identity(mat4 $pOut)
+        returns mat4 is native('kazmath') is export {*}
+
 sub kmVec4Transform(vec4 $pOut, vec4 $pV,
                     mat4 $pM)
         returns vec4 is native('kazmath') is export {*}
+
