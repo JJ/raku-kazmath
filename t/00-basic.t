@@ -8,9 +8,16 @@ is-approx( kmDegreesToRadians(kmRadiansToDegrees(2.Num)),2, "Return values OK");
 done-testing;
 
 
-my vec4 $v .= new( | ( 1.Num xx 4 ) );
-is( $v.x, 1.Num, "First OK");
-is( $v.w, 1.Num, "Last OK");
+subtest "Vec4", {
+    my vec4 $out .= new;
+    is($out.x, 0.Num, "First OK");
+    my vec4 $v .= new(|(1.Num xx 4));
+    is($v.x, 1.Num, "First OK");
+    is($v.w, 1.Num, "Last OK");
+    my vec4 $in .= new(1.Num, 0.Num, 0.Num, 1.Num);
+    my vec4 $result = kmVec4Scale($out, $in, 2.Num);
+    is($result.x, 1.4142135381698608, "Scaling OK");
+}
 
 my mat4 $one-mat .= new;
 ok($one-mat, "Declaration OK");
@@ -37,6 +44,9 @@ subtest "Rotation X", {
     my mat4 $two-mat .= new;
     my $return-pi = kmMat4RotationX($two-mat, -pi/2);
     is $turn-pi.mat[6], -$return-pi.mat[6], "Rotates X OK";
+    my vec4 $out .= new(0.Num, 0.Num, 0.Num, 1.Num);
+    my vec4 $in  .= new(1.Num, 0.Num, 0.Num, 1.Num);
+    my vec4 $result = kmVec4Transform( $out, $in, $turn-pi);
 };
 
 subtest "Rotation Y", {
@@ -54,3 +64,4 @@ subtest "Rotation Z", {
     my $return-pi = kmMat4RotationZ($two-mat, -pi);
     is $turn-pi.mat[1], -$return-pi.mat[1], "Rotates Z OK";
 };
+
