@@ -31,6 +31,26 @@ $expected .= chomp;
 is $returned-mat.gist, $expected,
  "Whole class";
 
-my $turn-pi = kmMat4RotationX( $one-mat, pi );
-my $return-pi = kmMat4RotationX( $one-mat, -pi );
-is $turn-pi.mat[6], $return-pi.mat[6], "Inverts OK";
+subtest "Rotation X", {
+    my mat4 $one-mat .= new;
+    my $turn-pi = kmMat4RotationX($one-mat, pi/2);
+    my mat4 $two-mat .= new;
+    my $return-pi = kmMat4RotationX($two-mat, -pi/2);
+    is $turn-pi.mat[6], -$return-pi.mat[6], "Rotates X OK";
+};
+
+subtest "Rotation Y", {
+    my mat4 $one-mat .= new;
+    my $turn-pi = kmMat4RotationY($one-mat, pi/2);
+    my mat4 $two-mat .= new;
+    my $return-pi = kmMat4RotationY($two-mat, -pi/2);
+    is $turn-pi.mat[2], -$return-pi.mat[2], "Rotates Y OK";
+};
+
+subtest "Rotation Z", {
+    my mat4 $one-mat .= new;
+    my $turn-pi = kmMat4RotationZ($one-mat, pi);
+    my mat4 $two-mat .= new;
+    my $return-pi = kmMat4RotationZ($two-mat, -pi);
+    is $turn-pi.mat[1], -$return-pi.mat[1], "Rotates Z OK";
+};
