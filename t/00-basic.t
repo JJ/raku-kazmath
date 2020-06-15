@@ -16,7 +16,6 @@ subtest "Vec4", {
     is($v.w, 1.Num, "Last OK");
     my vec4 $in .= new(1.Num, 0.Num, 0.Num, 1.Num);
     my vec4 $result = kmVec4Scale($out, $in, 2.Num);
-    say $result;
     is($result.x, 1.4142135381698608, "Scaling OK");
 }
 
@@ -48,7 +47,9 @@ subtest "Rotation X", {
     my vec4 $out .= new;
     my vec4 $in  .= new(0.Num, 1.Num, 0.Num, 1.Num);
     my vec4 $result = kmVec4Transform( $out, $in, $result1);
-    is( $result.z,1e0, "Turning stuff X")
+    is( $result.z,1e0, "Turning stuff X");
+    my vec4 $result2 = kmVec4Transform( $out, $kazmath::vec4-y, $result1);
+    is( $result2.z,1e0, "Turning stuff X");
 };
 
 subtest "Rotation Y", {
