@@ -1,7 +1,6 @@
 # kazmath
 
-This is an embryo of a NativeCall port of the [kazmath library](https://github
-.com/Kazade/kazmath).
+This is an embryo of a NativeCall port of the [kazmath library](https://github.com/Kazade/kazmath).
 
 kazmath is low-level library for manipulation of graphics primitives. It's
  similar to others graphics libraries such as OpenGL, but it's simpler and
