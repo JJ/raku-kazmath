@@ -8,7 +8,7 @@ kazmath is low-level library for manipulation of graphics primitives. It's
 
 ## Installing
 
-You need to install kazmath from source, compiling it. Follow the
+You need to install kazmath from source (URL above), compiling it. Follow the
  instructions to create a shared library.
  
  Then you xan install this from this source or via
@@ -37,6 +37,8 @@ Tutorial for [NativeCall](https://docs.raku.org/language/nativecall)
 Also, this has been built mainly to be used as a recipe in the upcoming Raku
  Recipes book by APress. Check out all [Raku titles in Apress such as this one.
  ](https://www.apress.com/gp/book/9781484249550)
+ 
+If you want to create a Dockerfile with `kazmath`, check out the [`download-and-compile-kazmath.sh`](download-and-compile-kazmath.sh) included in this repo.
 
 ## License
  
