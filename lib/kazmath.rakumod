@@ -8,16 +8,16 @@ class vec4 is repr('CStruct') is export {
     has num32 $.z;
     has num32 $.w;
 
-    method new( $x = 0.Num, $y=0.Num, $z=0.Num, $w = 1.Num ) {
+    method new( Num() $x = 0, Num() $y=0, Num() $z=0, Num() $w = 1 ) {
         self.bless( :$x, :$y, :$z, :$w )
     }
 
     submethod BUILD ( :$!x, :$!y, :$!z, :$!w) { }
 }
 
-our $vec4-x = vec4.new( 1.Num, 0.Num, 0.Num, 1.Num);
-our $vec4-y = vec4.new( 0e0, 1.Num, 0e0, 1.Num);
-our $vec4-z = vec4.new( 0.Num, 0.Num, 1.Num, 1.Num);
+our $vec4-x = vec4.new( 1, 0, 0, 1);
+our $vec4-y = vec4.new( 0, 1, 0, 1);
+our $vec4-z = vec4.new( 0, 0, 1, 1);
 
 sub kmVec4Scale(vec4 $pOut, vec4 $pIn, num32 $s)
         returns vec4 is native('kazmath') is export {*}
