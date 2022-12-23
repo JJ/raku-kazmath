@@ -1,4 +1,4 @@
-# kazmath
+# kazmath [![Test Raku](https://github.com/JJ/raku-kazmath/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/raku-kazmath/actions/workflows/test.yaml)
 
 This is an embryo of a NativeCall port of the [kazmath 
 library](https://github.com/Kazade/kazmath), which is a low-level library for
