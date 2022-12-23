@@ -7,6 +7,10 @@ is( kmSQR( 2.Num ),4, "Simple function works");
 is-approx( kmDegreesToRadians(kmRadiansToDegrees(2.Num)),2, "Return values OK");
 done-testing;
 
+subtest "Vec3", {
+    my vec3 $out .= new(1.Num, 0.Num, 0.Num);
+    is(kmVec3Length($out), 1.Num, "Length OK");
+}
 
 subtest "Vec4", {
     my vec4 $out .= new;

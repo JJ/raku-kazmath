@@ -17,6 +17,9 @@ class vec3 is repr('CStruct') is export {
 sub kmVec3Fill(vec3 $pOut, num32 $x, num32 $y, num32 $z)
         returns vec3 is native('kazmath') is export {*}
 
+sub kmVec3Length(vec3 $pOut )
+        returns num32 is native('kazmath') is export {*}
+
 class vec4 is repr('CStruct') is export {
     has num32 $.x;
     has num32 $.y;
