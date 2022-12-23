@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name : Install kazmath
-        run: ./download-and-install-kazmath-alpine.sh
+        run: ./download-and-compile-kazmath-alpine.sh
       - name: Install pre-requisites and test
         run: zef install --deps-only . && zef --debug test .
 

@@ -1,7 +1,6 @@
 {
-  "auth" : "github:JJ",
+  "auth" : "zef:jjmerelo",
   "authors" : ["JJ Merelo"],
-  "depends" : [],
   "description" : "Raku bindings for the kazmath library",
   "license" : "Artistic-2.0",
   "name" : "kazmath",
@@ -14,6 +13,6 @@
   "tags" : [
     "modules","math", "graphics"
   ],
-    "version" : "0.0.1",
-    "meta-version": 1
+  "version" : "0.0.2",
+  "meta-version": 1
 }
