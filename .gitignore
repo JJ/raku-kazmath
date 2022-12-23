@@ -11,3 +11,6 @@
 workspace.xml
 *.iml
 .idea
+
+# Compiling in-site
+kazmath
