@@ -2,6 +2,21 @@ use NativeCall;
 
 unit module kazmath;
 
+class vec3 is repr('CStruct') is export {
+    has num32 $.x;
+    has num32 $.y;
+    has num32 $.z;
+
+    method new( Num() $x = 0, Num() $y=0, Num() $z=0) {
+        self.bless( :$x, :$y, :$z )
+    }
+
+    submethod BUILD ( :$!x, :$!y, :$!z ) { }
+}
+
+sub kmVec3Fill(vec3 $pOut, num32 $x, num32 $y, num32 $z)
+        returns vec3 is native('kazmath') is export {*}
+
 class vec4 is repr('CStruct') is export {
     has num32 $.x;
     has num32 $.y;
