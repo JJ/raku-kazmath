@@ -10,7 +10,7 @@ library](https://github.com/Kazade/kazmath), which is a low-level library for
 You need to install kazmath from source (URL above), compiling it. Follow the
  instructions to create a shared library.
  
-Then you xan install this from this source or via
+Then you can install this from this source or via
  
     zef install kazmath
 
